@@ -1,25 +1,28 @@
 import { MessageSquare, HeartHandshake, Sparkles } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export const ServicesSection = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: MessageSquare,
-      title: "Be Heard",
-      description: "Participate in our livestreams, ask our podcast hosts anything, and share your story. Your voice matters here.",
+      title: t('beHeard'),
+      description: t('beHeardDescription'),
       bgColor: "bg-secondary",
       iconColor: "text-primary"
     },
     {
       icon: HeartHandshake,
-      title: "Be Understood", 
-      description: "Join workshops and discussions designed for women. Connect with others who share your experiences and aspirations.",
+      title: t('beUnderstood'), 
+      description: t('beUnderstoodDescription'),
       bgColor: "bg-red-50",
       iconColor: "text-accent"
     },
     {
       icon: Sparkles,
-      title: "Be Empowered",
-      description: "Get exclusive content, join supportive communities, and find the resources you need to thrive personally and professionally.",
+      title: t('beEmpowered'),
+      description: t('beEmpoweredDescription'),
       bgColor: "bg-yellow-50",
       iconColor: "text-yellow-500"
     }
@@ -29,9 +32,9 @@ export const ServicesSection = () => {
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">What You'll Get Here</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">{t('whatYouGetHere')}</h2>
           <p className="mt-4 text-muted-foreground">
-            This is your safe space to connect, learn, and grow.
+            {t('safeSpaceDescription')}
           </p>
         </div>
         
